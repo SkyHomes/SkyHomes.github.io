@@ -3,153 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SkyHomes Tiny Houses · Premium Glamping</title>
+<title>SkyHomes Tiny Houses – Premium Glamping für Campinganlagen</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--forest:#1C3A2A;--forest-mid:#2D5A3F;--sage:#4A7A5A;--sage-light:#7AAF8A;--cream:#F7F4EE;--warm-white:#FDFCF9;--gold:#C9963A;--gold-light:#E8C068;--charcoal:#2A2A2A;--mid-gray:#5A5A5A;--light-gray:#E8E5DF}
 body{font-family:"DM Sans",sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6;font-size:15px}
-.hero{position:relative;background:var(--forest);min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero-imgs{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;opacity:.42}
-.hero-imgs div{background-size:cover;background-position:center}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,58,42,.97) 0%,rgba(28,58,42,.5) 55%,rgba(28,58,42,.15) 100%)}
-.hero-content{position:relative;z-index:2;padding:72px 64px;max-width:1100px;width:100%}
-.hero-logo{height:58px;display:block;margin-bottom:28px}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px}
-.hero-h1{font-family:"Playfair Display",serif;font-size:clamp(38px,5.5vw,66px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:22px;max-width:680px}
+
+/* HERO */
+.hero{position:relative;background:var(--forest);min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/d4fb6708-8dc4-41ee-85d4-58b0edd5bcf3.png');background-size:cover;background-position:center;opacity:.35}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,58,42,.98) 0%,rgba(28,58,42,.6) 45%,rgba(28,58,42,.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:80px 72px;max-width:800px;width:100%}
+.hero-logo{height:54px;display:block;margin-bottom:32px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.hero-h1{font-family:"Playfair Display",serif;font-size:clamp(40px,5.5vw,68px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:24px}
 .hero-h1 em{font-style:italic;color:var(--gold-light)}
-.hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:40px;line-height:1.65}
-.cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:14px;padding:16px 32px;text-decoration:none;transition:background .2s}
+.hero-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:44px;line-height:1.65}
+.cta-group{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;padding:18px 36px;text-decoration:none;transition:background .2s;white-space:nowrap}
 .btn-primary:hover{background:var(--gold-light);color:var(--charcoal)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.9);font-family:"DM Sans",sans-serif;font-weight:400;font-size:14px;padding:15px 28px;text-decoration:none;transition:.2s}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.85);font-family:"DM Sans",sans-serif;font-weight:400;font-size:14px;padding:17px 28px;text-decoration:none;transition:.2s}
 .btn-ghost:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.07)}
-.kpi-strip{background:var(--forest-mid);padding:0 64px}
-.kpi-inner{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,.1)}
-.kpi-item{padding:28px 32px;border-right:1px solid rgba(255,255,255,.1)}
-.kpi-value{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--gold-light);display:block;line-height:1;margin-bottom:6px}
-.kpi-label{font-size:10.5px;font-weight:400;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1px}
-.section{padding:80px 64px}
+
+/* KPI BADGES */
+.kpi-strip{background:var(--forest-mid);padding:0 72px}
+.kpi-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.kpi-item{padding:32px 28px;border-right:1px solid rgba(255,255,255,.1);position:relative}
+.kpi-item:first-child{border-left:1px solid rgba(255,255,255,.1)}
+.kpi-value{font-family:"Playfair Display",serif;font-size:38px;font-weight:700;color:var(--gold-light);display:block;line-height:1;margin-bottom:8px}
+.kpi-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1.2px;line-height:1.4}
+
+/* SECTIONS */
+.section{padding:88px 72px}
 .section-cream{background:var(--cream)}
 .section-white{background:var(--warm-white)}
 .section-forest{background:var(--forest)}
-.sec-label{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+.section-dark{background:#222}
+.sec-label{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:14px}
 .sec-label-light{color:var(--gold-light)}
-.sec-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3.2vw,40px);font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:44px;max-width:560px}
+.sec-title{font-family:"Playfair Display",serif;font-size:clamp(28px,3.2vw,42px);font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:52px;max-width:560px}
 .sec-title-light{color:#fff}
-.gold-bar{width:56px;height:3px;background:var(--gold);margin-bottom:32px}
-.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
-.opp-card{padding:36px;background:var(--warm-white)}
-.opp-card.problem{border-left:3px solid #C0392B}
-.opp-card.solution{border-left:3px solid var(--sage)}
-.opp-tag{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-.opp-tag.pt{color:#C0392B}.opp-tag.st{color:var(--sage)}
-.opp-list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.opp-list li{font-size:14px;color:var(--charcoal);line-height:1.55;padding-left:22px;position:relative}
-.opp-list li::before{content:"";position:absolute;left:0;top:5px;width:10px;height:10px;border-radius:50%}
-.opp-card.problem .opp-list li::before{background:#FDECEA;border:1.5px solid #E57373}
-.opp-card.solution .opp-list li::before{background:#E8F5E9;border:1.5px solid var(--sage-light)}
-.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.gold-bar{width:56px;height:3px;background:var(--gold)}
+
+/* PROBLEM / SOLUTION */
+.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.opp-card{padding:40px;border-radius:2px;box-shadow:0 2px 24px rgba(0,0,0,.06)}
+.opp-card.problem{background:#fff;border-top:4px solid #C0392B}
+.opp-card.solution{background:#fff;border-top:4px solid var(--sage)}
+.opp-tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.opp-tag.pt{color:#C0392B}
+.opp-tag.st{color:var(--sage)}
+.opp-tag::before{content:"";display:block;width:8px;height:8px;border-radius:50%;background:currentColor}
+.opp-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.opp-list li{font-size:14.5px;color:var(--charcoal);line-height:1.6;padding-left:20px;position:relative}
+.opp-list li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--light-gray)}
+.opp-card.problem .opp-list li::before{background:#E57373}
+.opp-card.solution .opp-list li::before{background:var(--sage-light)}
+
+/* PRODUCT IMAGES */
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#111}
 .prod-img{overflow:hidden}
-.prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.prod-img:hover img{transform:scale(1.03)}
-.prod-img.wide{grid-column:span 2;aspect-ratio:16/7}
+.prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.prod-img:hover img{transform:scale(1.04)}
+.prod-img.wide{grid-column:span 2;aspect-ratio:21/8}
 .prod-img.tall{aspect-ratio:4/3}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-gray);margin-top:48px}
-.ben-item{background:var(--warm-white);padding:40px 32px}
-.ben-icon{width:44px;height:44px;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.ben-icon svg{width:22px;height:22px;fill:var(--gold-light)}
-.ben-title{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--charcoal);margin-bottom:10px}
-.ben-text{font-size:13.5px;color:var(--mid-gray);line-height:1.65}
-.roi-table{width:100%;border-collapse:collapse;max-width:820px;margin-top:36px}
-.roi-table th{background:var(--forest);color:rgba(255,255,255,.7);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:14px 18px;text-align:left}
-.roi-table td{padding:13px 18px;font-size:14px;border-bottom:1px solid var(--light-gray);color:var(--charcoal)}
+
+/* BENEFITS */
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.ben-item{background:#fff;padding:40px 32px;border-radius:2px;box-shadow:0 2px 20px rgba(0,0,0,.06);border-bottom:3px solid var(--gold)}
+.ben-icon{width:48px;height:48px;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:20px;border-radius:2px}
+.ben-icon svg{width:24px;height:24px;fill:var(--gold-light)}
+.ben-title{font-family:"Playfair Display",serif;font-size:20px;font-weight:700;color:var(--charcoal);margin-bottom:12px}
+.ben-text{font-size:14px;color:var(--mid-gray);line-height:1.7}
+
+/* ROI */
+.roi-table{width:100%;border-collapse:collapse;max-width:860px;margin-top:40px;border-radius:2px;overflow:hidden}
+.roi-table th{background:var(--forest);color:rgba(255,255,255,.75);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:16px 20px;text-align:left}
+.roi-table td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--light-gray);color:var(--charcoal)}
 .roi-table tr:nth-child(even) td{background:var(--cream)}
-.roi-table tr.hl td{background:var(--forest);color:var(--gold-light);font-weight:600;font-size:15px}
-.roi-note{margin-top:24px;padding:20px 24px;border-left:3px solid var(--gold);background:var(--cream);max-width:820px;font-size:13.5px;color:var(--mid-gray);line-height:1.6}
+.roi-table tr.hl td{background:var(--forest);color:var(--gold-light);font-weight:600;font-size:15px;border-bottom:none}
+.roi-note{margin-top:28px;padding:22px 28px;border-left:4px solid var(--gold);background:#fff;max-width:860px;font-size:13.5px;color:var(--mid-gray);line-height:1.65;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .roi-note strong{color:var(--charcoal)}
-.proc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
-.proc-row::before{content:"";position:absolute;top:27px;left:64px;right:64px;height:1px;background:var(--light-gray);z-index:0}
-.proc-step{padding:0 20px;text-align:center;position:relative;z-index:1}
-.proc-num{width:54px;height:54px;border-radius:50%;background:var(--forest);color:var(--gold-light);font-family:"Playfair Display",serif;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.proc-title{font-weight:600;font-size:14px;color:var(--charcoal);margin-bottom:8px}
-.proc-text{font-size:13px;color:var(--mid-gray);line-height:1.6}
-.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
-.testi{padding:36px 36px 32px;border:1px solid rgba(255,255,255,.12);position:relative}
-.testi::before{content:"C";font-family:"Playfair Display",serif;font-size:72px;color:var(--gold);opacity:.5;position:absolute;top:12px;left:24px;line-height:1}
-.testi-text{font-size:15px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.7;margin-top:24px;font-style:italic}
-.testi-source{margin-top:16px;font-size:12px;font-weight:500;color:var(--gold-light);letter-spacing:.5px;text-transform:uppercase}
-.cta-section{background:var(--cream);padding:88px 64px;text-align:center}
-.cta-box{max-width:680px;margin:0 auto}
-.cta-logo{height:52px;display:block;margin:0 auto 32px}
-.cta-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3.2vw,42px);font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:18px}
+
+/* Mobile ROI cards */
+.roi-cards{display:none;flex-direction:column;gap:12px;margin-top:40px;max-width:860px}
+.roi-card{background:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;border-left:3px solid var(--light-gray);box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.roi-card.hl{background:var(--forest);border-color:var(--gold)}
+.roi-card-label{font-size:13px;color:var(--mid-gray)}
+.roi-card-val{font-size:14px;font-weight:600;color:var(--charcoal)}
+.roi-card.hl .roi-card-label{color:rgba(255,255,255,.65)}
+.roi-card.hl .roi-card-val{color:var(--gold-light);font-size:16px}
+
+/* PROCESS */
+.proc-row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;position:relative}
+.proc-row::before{content:"";position:absolute;top:28px;left:10%;right:10%;height:1px;background:var(--light-gray);z-index:0}
+.proc-step{padding:0 24px;text-align:center;position:relative;z-index:1}
+.proc-num{width:56px;height:56px;border-radius:50%;background:var(--forest);color:var(--gold-light);font-family:"Playfair Display",serif;font-size:22px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 16px rgba(28,58,42,.3)}
+.proc-title{font-weight:600;font-size:14px;color:var(--charcoal);margin-bottom:10px;line-height:1.4}
+.proc-text{font-size:13px;color:var(--mid-gray);line-height:1.65}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:52px}
+.testi{padding:40px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);position:relative;border-radius:2px}
+.testi-quote{font-family:"Playfair Display",serif;font-size:64px;color:var(--gold);opacity:.6;line-height:.8;margin-bottom:16px;display:block}
+.testi-text{font-size:15.5px;font-weight:300;color:rgba(255,255,255,.9);line-height:1.75;font-style:italic}
+.testi-meta{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)}
+.testi-name{font-size:13px;font-weight:600;color:var(--gold-light);letter-spacing:.5px;text-transform:uppercase}
+.testi-location{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px}
+
+/* CTA */
+.cta-section{background:var(--cream);padding:96px 72px;text-align:center}
+.cta-box{max-width:700px;margin:0 auto}
+.cta-logo{height:52px;display:block;margin:0 auto 36px}
+.cta-title{font-family:"Playfair Display",serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;color:var(--charcoal);line-height:1.18;margin-bottom:20px}
 .cta-title em{color:var(--gold);font-style:italic}
-.cta-sub{font-size:16px;color:var(--mid-gray);line-height:1.65;margin-bottom:36px}
-.cta-includes{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}
-.cta-inc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mid-gray)}
-.cta-inc::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage);display:block}
-.btn-cta{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;padding:18px 44px;text-decoration:none;transition:.2s}
+.cta-sub{font-size:16px;color:var(--mid-gray);line-height:1.7;margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto}
+.cta-includes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:44px;max-width:520px;margin-left:auto;margin-right:auto;text-align:left}
+.cta-inc{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--charcoal)}
+.cta-inc::before{content:"✓";font-weight:700;color:var(--sage);font-size:14px;flex-shrink:0}
+.btn-cta{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:16px;padding:20px 48px;text-decoration:none;transition:.2s;letter-spacing:.3px}
 .btn-cta:hover{background:var(--forest-mid)}
-.contact-footer{background:#2A2A2A;padding:52px 64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
-.con-name{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
-.con-role{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
-.con-details{display:flex;gap:24px;flex-wrap:wrap}
-.con-link{font-size:14px;color:rgba(255,255,255,.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s}
+
+/* FOOTER */
+.contact-footer{background:#1E1E1E;padding:56px 72px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:48px}
+.con-name{font-family:"Playfair Display",serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:5px}
+.con-role{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:20px}
+.con-details{display:flex;gap:28px;flex-wrap:wrap}
+.con-link{font-size:14px;color:rgba(255,255,255,.65);text-decoration:none;display:flex;align-items:center;gap:7px;transition:.2s}
 .con-link:hover{color:var(--gold-light)}
 .footer-logo{height:44px;display:block;margin-bottom:8px;margin-left:auto}
-.brand-sub{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;text-align:right}
+.brand-sub{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;text-align:right}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-.hero-content,.section,.kpi-strip{padding-left:32px;padding-right:32px}
-.kpi-inner{grid-template-columns:repeat(2,1fr)}
-.opp-grid,.prod-grid,.ben-grid,.testi-grid{grid-template-columns:1fr}
-.prod-img.wide{grid-column:span 1;aspect-ratio:16/9}
-.proc-row{grid-template-columns:1fr 1fr;gap:32px}
-.proc-row::before{display:none}
-.contact-footer{grid-template-columns:1fr}
-.footer-logo,.brand-sub{margin-left:0;text-align:left}}
+  .hero-content,.section,.kpi-strip,.cta-section,.contact-footer{padding-left:28px;padding-right:28px}
+  .hero-content{padding-top:56px;padding-bottom:56px}
+  .kpi-inner{grid-template-columns:repeat(2,1fr)}
+  .kpi-item:nth-child(2){border-right:none}
+  .opp-grid,.testi-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:1fr}
+  .prod-img.wide{grid-column:span 1;aspect-ratio:16/9}
+  .ben-grid{grid-template-columns:1fr}
+  .proc-row{grid-template-columns:1fr 1fr;gap:36px}
+  .proc-row::before{display:none}
+  .roi-table{display:none}
+  .roi-cards{display:flex}
+  .contact-footer{grid-template-columns:1fr;gap:32px}
+  .footer-logo,.brand-sub{margin-left:0;text-align:left}
+  .cta-includes{grid-template-columns:1fr}
+  .btn-primary{font-size:14px;padding:16px 24px}
+  .hero-h1{font-size:clamp(36px,8vw,52px)}
+}
+
+/* CONTACT FORM */
+.contact-form{max-width:480px;margin:0 auto;text-align:left}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.contact-form input{width:100%;padding:14px 18px;border:1.5px solid var(--light-gray);background:#fff;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--charcoal);outline:none;transition:border-color .2s;margin-bottom:12px}
+.contact-form input:focus{border-color:var(--sage)}
+.contact-form input::placeholder{color:#aaa}
+.btn-form{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--forest);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;padding:18px 32px;border:none;cursor:pointer;transition:.2s;letter-spacing:.3px;margin-bottom:16px}
+.btn-form:hover{background:var(--forest-mid)}
+.form-note{font-size:13px;color:var(--mid-gray);text-align:center}
+.form-note a{color:var(--sage);text-decoration:none}
+.form-note a:hover{color:var(--forest)}
+.form-success{background:#E8F5E9;border:1.5px solid var(--sage-light);color:var(--forest);padding:14px 20px;font-size:14px;font-weight:500;text-align:center;margin-top:12px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <header class="hero">
-  <div class="hero-imgs">
-    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/d4fb6708-8dc4-41ee-85d4-58b0edd5bcf3.png')"></div>
-    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/IMG_5498.jpg')"></div>
-    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/SkyHome_11-1.jpeg')"></div>
-  </div>
+  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/logo-white.png" alt="SkyHomes" class="hero-logo">
-    <p class="eyebrow">Glamping-Infrastruktur 2026</p>
+    <p class="eyebrow">Premium Glamping-Infrastruktur &middot; 2026</p>
     <h1 class="hero-h1">Ihr Stellplatz.<br><em>Ihr neues Umsatzpotenzial.</em></h1>
-    <p class="hero-sub">Schlüsselfertige Premium-Unterkünfte, die Ihren Campingplatz in eine Glamping-Destination verwandeln - ohne Großbaustelle, ohne jahrelange Amortisation.</p>
+    <p class="hero-sub">Schlüsselfertige Premium-Unterkünfte für Campinganlagen – vollmöbliert, genehmigungsbegleitet, innerhalb weniger Wochen buchungsbereit.</p>
     <div class="cta-group">
       <a href="tel:+4915737253851" class="btn-primary">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        Jetzt Beratungsgespräch anfragen
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Kostenloses Beratungsgespräch anfragen
       </a>
-      <a href="/cdn-cgi/l/email-protection#95b3b6a4a4a4aeb3b6a4a5adaeb3b6a4a5a0aeb3b6a4a4adaeb3b6a4a5a4aeb3b6a4a4a1aeb3b6a1a3aeb3b6a4a5a3aeb3b6a4a4a4aeb3b6a4a4a1aeb3b6a4a5a5aeb3b6aca2aeb3b6a4a4a5aeb3b6a3a1aeb3b6a4a4a0aeb3b6a4a4a3aeb3b6aca2aeb3b6a4a4a1aeb3b6a4a5a2aeb3b6a4a7a5aeb3b6a4a4a3aeb3b6a4a5a4aeb3b6acacaeb3b6a4a5a1aeb3b6a1a3aeb3b6acacaeb3b6a4a4a4aeb3b6a4a5acae" class="btn-ghost">&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;</a>
+      <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;" class="btn-ghost">&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;</a>
     </div>
   </div>
 </header>
 
+<!-- KPI STRIP -->
 <div class="kpi-strip">
   <div class="kpi-inner">
-    <div class="kpi-item"><span class="kpi-value">3–4×</span><span class="kpi-label">Mehr Umsatz/m² vs. Stellplatz</span></div>
-    <div class="kpi-item"><span class="kpi-value">2,5 J.</span><span class="kpi-label">ROI ab</span></div>
-    <div class="kpi-item"><span class="kpi-value">130 EUR</span><span class="kpi-label">Nachtrate bis</span></div>
-    <div class="kpi-item"><span class="kpi-value">12 Mo.</span><span class="kpi-label">Ganzjahresbetrieb möglich</span></div>
+    <div class="kpi-item"><span class="kpi-value">3–4&times;</span><span class="kpi-label">Mehr Umsatz pro m² vs. Stellplatz</span></div>
+    <div class="kpi-item"><span class="kpi-value">ab 2,5 J.</span><span class="kpi-label">Return on Investment</span></div>
+    <div class="kpi-item"><span class="kpi-value">bis 130 €</span><span class="kpi-label">Preis pro Nacht</span></div>
+    <div class="kpi-item"><span class="kpi-value">12 Monate</span><span class="kpi-label">Ganzjahresbetrieb möglich</span></div>
   </div>
 </div>
 
+<!-- PROBLEM / SOLUTION -->
 <section class="section section-white">
   <p class="sec-label">Ausgangslage &amp; Lösung</p>
-  <h2 class="sec-title">Der Markt verändert sich. Ihre Anlage auch?</h2>
+  <h2 class="sec-title">Der Markt verändert sich.<br>Ihre Anlage auch?</h2>
   <div class="opp-grid">
     <div class="opp-card problem">
       <p class="opp-tag pt">Das Problem</p>
       <ul class="opp-list">
-        <li>Stellplätze belegt - Ertrag pro Fläche bleibt begrenzt</li>
+        <li>Stellplätze belegt – Ertrag pro Fläche bleibt begrenzt</li>
         <li>Gäste fordern zunehmend komfortable, feste Unterkünfte</li>
         <li>Klassische Neubauten: teuer, langwierig, genehmigungsintensiv</li>
         <li>Wettbewerber positionieren sich bereits als Glamping-Destination</li>
@@ -159,7 +220,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--warm-white);color:var(--c
       <p class="opp-tag st">Die Lösung</p>
       <ul class="opp-list">
         <li>Schlüsselfertig geliefert, aufgestellt, sofort buchbar</li>
-        <li>Glamping-Gäste zahlen 80–130 EUR/Nacht – das 3–4-Fache</li>
+        <li>Glamping-Gäste zahlen 90–130 €/Nacht – das 3–4-Fache</li>
         <li>Neue Zielgruppen: Paare, Remote-Worker, Familien</li>
         <li>Winterfeste Konstruktion: 12-Monats-Betrieb gesichert</li>
       </ul>
@@ -167,12 +228,14 @@ body{font-family:"DM Sans",sans-serif;background:var(--warm-white);color:var(--c
   </div>
 </section>
 
+<!-- PRODUCT IMAGES -->
 <div class="prod-grid">
   <div class="prod-img wide"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/d4fb6708-8dc4-41ee-85d4-58b0edd5bcf3.png" alt="SkyHomes Campinganlage"></div>
   <div class="prod-img tall"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/IMG_5498.jpg" alt="SkyHomes Einzelhaus"></div>
   <div class="prod-img tall"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/SkyHome_11-1.jpeg" alt="SkyHomes Installation"></div>
 </div>
 
+<!-- BENEFITS -->
 <section class="section section-cream">
   <p class="sec-label">Mehrwert im Dreiklang</p>
   <h2 class="sec-title">Wirtschaftlich. Operativ. Strategisch.</h2>
@@ -180,94 +243,125 @@ body{font-family:"DM Sans",sans-serif;background:var(--warm-white);color:var(--c
     <div class="ben-item">
       <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
       <h3 class="ben-title">Wirtschaftlich</h3>
-      <p class="ben-text">ROI bereits ab 2,5 Jahren. Planbare Fixpreise ohne Baukostenrisiko. Teilweise kombinierbar mit Tourismusförderung. 3–4× höherer Umsatz/m2 als klassische Stellplätze.</p>
+      <p class="ben-text">ROI bereits ab 2,5 Jahren. Planbare Fixpreise ohne Baukostenrisiko. Teilweise kombinierbar mit Tourismusförderung. 3–4× höherer Umsatz pro m² als klassische Stellplätze.</p>
     </div>
     <div class="ben-item">
-      <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.81 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.81 18 6 15.21 6 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg></div>
       <h3 class="ben-title">Operativ</h3>
-      <p class="ben-text">Lieferung und Aufstellung in Wochen. Vollmoebliert: Küche, Bad, Heizung inklusive. Flexibel skalierbar ab 2-3 Einheiten. Nahtlose Anbindung an bestehende Infrastruktur.</p>
+      <p class="ben-text">Lieferung &amp; Aufstellung in wenigen Wochen. Vollmöbliert: Küche, Bad, Heizung inklusive. Flexibel skalierbar ab 2–3 Einheiten. Nahtlose Anbindung an bestehende Infrastruktur.</p>
     </div>
     <div class="ben-item">
       <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
       <h3 class="ben-title">Strategisch</h3>
-      <p class="ben-text">Positionierung als Premium-Destination. Zugang zu Glamping-Portalen und neuen Buchungskanälen. Nachhaltigkeitsbonus durch Holzbauweise. Ganzjahres-Attraktivitaet gesichert.</p>
+      <p class="ben-text">Positionierung als Premium-Destination mit Alleinstellungsmerkmal. Zugang zu Glamping-Portalen &amp; neuen Buchungskanälen. Nachhaltigkeitsbonus durch Holzbauweise. Ganzjahresattraktivität gesichert.</p>
     </div>
   </div>
 </section>
 
+<!-- ROI -->
 <section class="section section-white">
   <p class="sec-label">Wirtschaftlichkeit</p>
   <h2 class="sec-title">Die Zahlen sprechen für sich.</h2>
   <table class="roi-table">
     <thead><tr><th>Position</th><th>Wert</th><th>Anmerkung</th></tr></thead>
     <tbody>
-      <tr><td>Investition pro Einheit</td><td><strong>45.000–60.000 EUR</strong></td><td>Inkl. Lieferung, Aufstellung, Ausstattung</td></tr>
-      <tr><td>Nachtrate</td><td><strong>90–130 EUR</strong></td><td>Je nach Ausstattung und Lage</td></tr>
-      <tr><td>Auslastung Jahr 1</td><td><strong>120-150 Nächte</strong></td><td>Haupt- und Nebensaison</td></tr>
-      <tr><td>Auslastung ab Jahr 2</td><td><strong>150-200 Nächte</strong></td><td>Nach Etablierung und Bewertungen</td></tr>
-      <tr><td>Jahresumsatz (konservativ)</td><td><strong>10.800–19.500 EUR</strong></td><td>120-150 Nächte × 90 EUR</td></tr>
-      <tr><td>Jahresumsatz ab Jahr 2</td><td><strong>16.500–26.000 EUR</strong></td><td>150-200 Nächte × 110 EUR</td></tr>
+      <tr><td>Investition pro Einheit</td><td><strong>45.000–60.000 €</strong></td><td>Inkl. Lieferung, Aufstellung, Ausstattung</td></tr>
+      <tr><td>Preis pro Nacht</td><td><strong>90–130 €</strong></td><td>Je nach Ausstattung und Lage</td></tr>
+      <tr><td>Auslastung Jahr 1</td><td><strong>120–150 Nächte</strong></td><td>Haupt- + Nebensaison</td></tr>
+      <tr><td>Auslastung ab Jahr 2</td><td><strong>150–200 Nächte</strong></td><td>Nach Etablierung &amp; Bewertungen</td></tr>
+      <tr><td>Jahresumsatz (konservativ)</td><td><strong>10.800–19.500 €</strong></td><td>120–150 Nächte × 90 €</td></tr>
+      <tr><td>Jahresumsatz ab Jahr 2</td><td><strong>16.500–26.000 €</strong></td><td>150–200 Nächte × 110 €</td></tr>
       <tr class="hl"><td>Amortisation</td><td>2,5–4 Jahre</td><td>Bei Betriebskosten 25–30 %</td></tr>
     </tbody>
   </table>
-  <p class="roi-note"><strong>Zusatzerlöse nicht eingerechnet:</strong> Verlängerte Aufenthalte durch hoehere Komfort - Frühstück, Wellness und Services - Cross-Selling - Erhöhte Gesamtattraktivität der Anlage.</p>
+  <div class="roi-cards">
+    <div class="roi-card"><span class="roi-card-label">Investition pro Einheit</span><span class="roi-card-val">45.000–60.000 €</span></div>
+    <div class="roi-card"><span class="roi-card-label">Preis pro Nacht</span><span class="roi-card-val">90–130 €</span></div>
+    <div class="roi-card"><span class="roi-card-label">Auslastung Jahr 1</span><span class="roi-card-val">120–150 Nächte</span></div>
+    <div class="roi-card"><span class="roi-card-label">Auslastung ab Jahr 2</span><span class="roi-card-val">150–200 Nächte</span></div>
+    <div class="roi-card"><span class="roi-card-label">Jahresumsatz (konservativ)</span><span class="roi-card-val">10.800–19.500 €</span></div>
+    <div class="roi-card"><span class="roi-card-label">Jahresumsatz ab Jahr 2</span><span class="roi-card-val">16.500–26.000 €</span></div>
+    <div class="roi-card hl"><span class="roi-card-label">Amortisation</span><span class="roi-card-val">2,5–4 Jahre</span></div>
+  </div>
+  <div class="roi-note"><strong>Zusatzerlöse noch nicht eingerechnet:</strong> Verlängerte Aufenthalte durch höheren Komfort &middot; Frühstück, Wellness &amp; Services &middot; Cross-Selling zu Bestandsangeboten &middot; Erhöhte Gesamtattraktivität der Anlage.</div>
 </section>
 
+<!-- PROCESS -->
 <section class="section section-cream">
   <p class="sec-label">Umsetzung</p>
   <h2 class="sec-title">Von der Analyse zur ersten Buchung.</h2>
   <div class="proc-row">
-    <div class="proc-step"><div class="proc-num">1</div><p class="proc-title">Standortanalyse und Planung</p><p class="proc-text">Geländebegehung, Prüfung baurechtlicher Rahmenbedingungen, Positionierungsempfehlung.</p></div>
-    <div class="proc-step"><div class="proc-num">2</div><p class="proc-title">Genehmigungsunterstützung</p><p class="proc-text">Bauvoranfrage, technische Unterlagen, Erfahrung mit Tiny-House-Genehmigungen.</p></div>
-    <div class="proc-step"><div class="proc-num">3</div><p class="proc-title">Lieferung und Installation</p><p class="proc-text">Deutschlandweite Anlieferung, schlüsselfertige Übergabe mit Einweisung.</p></div>
-    <div class="proc-step"><div class="proc-num">4</div><p class="proc-title">Vermarktungsstart</p><p class="proc-text">Positionierung, Preisgestaltung, Empfehlungen zu Glamping-Portalen und Fotomaterial.</p></div>
+    <div class="proc-step"><div class="proc-num">1</div><p class="proc-title">Standortanalyse &amp; Planung</p><p class="proc-text">Geländebegehung, Prüfung baurechtlicher Rahmenbedingungen, Positionierungsempfehlung.</p></div>
+    <div class="proc-step"><div class="proc-num">2</div><p class="proc-title">Genehmigungsunterstützung</p><p class="proc-text">Bauvoranfrage, technische Unterlagen, Erfahrung mit Tiny-House-Genehmigungen auf Campingplätzen.</p></div>
+    <div class="proc-step"><div class="proc-num">3</div><p class="proc-title">Lieferung &amp; Installation</p><p class="proc-text">Deutschlandweite Anlieferung, schlüsselfertige Übergabe mit fachgerechter Einweisung.</p></div>
+    <div class="proc-step"><div class="proc-num">4</div><p class="proc-title">Vermarktungsstart</p><p class="proc-text">Positionierung, Preisgestaltung, Empfehlungen zu Glamping-Portalen &amp; professionellem Fotomaterial.</p></div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section class="section section-forest">
   <p class="sec-label sec-label-light">Kundenstimmen</p>
   <h2 class="sec-title sec-title-light">Was Betreiber berichten.</h2>
   <div class="testi-grid">
     <div class="testi">
-      <p class="testi-text">Unsere drei Tiny Houses waren bereits im ersten Jahr zu 85 % ausgelastet - vor allem in der Nebensaison sind sie der entscheidende Umsatzbringer.</p>
-      <p class="testi-source">Campingplatz Schwarzwald · 4-Sterne-Anlage</p>
+      <span class="testi-quote">&#8220;</span>
+      <p class="testi-text">Unsere drei Tiny Houses waren bereits im ersten Jahr zu 85&nbsp;% ausgelastet – vor allem in der Nebensaison sind sie der entscheidende Umsatzbringer.</p>
+      <div class="testi-meta">
+        <p class="testi-name">Campingplatz Schwarzwald</p>
+        <p class="testi-location">4-Sterne-Anlage &middot; Baden-Württemberg</p>
+      </div>
     </div>
     <div class="testi">
+      <span class="testi-quote">&#8220;</span>
       <p class="testi-text">Die Genehmigung ging deutlich schneller als befürchtet, und die Gäste lieben die Kombination aus Natur und Komfort. Wir planen bereits die zweite Ausbaustufe.</p>
-      <p class="testi-source">Ferienpark Ostsee · Premium-Segment</p>
+      <div class="testi-meta">
+        <p class="testi-name">Ferienpark Ostsee</p>
+        <p class="testi-location">Premium-Segment &middot; Schleswig-Holstein</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-section">
   <div class="cta-box">
     <img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/logo_transparent.png" alt="SkyHomes" class="cta-logo">
-    <div class="gold-bar" style="margin:0 auto 28px"></div>
+    <div class="gold-bar" style="margin:0 auto 32px"></div>
     <h2 class="cta-title">Ihr Standort hat <em>Potenzial</em>.<br>Wir machen es sichtbar.</h2>
-    <p class="cta-sub">Kostenlose und unverbindliche Wirtschaftlichkeitsanalyse für Ihren Campingplatz.</p>
+    <p class="cta-sub">Wir erstellen für Ihren Standort eine individuelle Wirtschaftlichkeitsrechnung – kostenlos, unverbindlich, konkret.</p>
     <div class="cta-includes">
       <span class="cta-inc">Individuelle Wirtschaftlichkeitsrechnung</span>
-      <span class="cta-inc">Positionierungs-Empfehlung</span>
+      <span class="cta-inc">Positionierungsempfehlung für Ihren Standort</span>
       <span class="cta-inc">Genehmigungsübersicht Ihrer Region</span>
-      <span class="cta-inc">Finanzierungs- und Fördermöglichkeiten</span>
+      <span class="cta-inc">Finanzierungs- &amp; Fördermöglichkeiten</span>
     </div>
-    <a href="tel:+4915737253851" class="btn-cta">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      +49 157 3725 3851 - Beratungsgespräch vereinbaren
-    </a>
+    
+    <!-- FORMULAR -->
+    <div class="contact-form">
+      <div class="form-row">
+        <input type="text" id="f-name" placeholder="Ihr Name" autocomplete="name">
+        <input type="text" id="f-camp" placeholder="Name des Campingplatzes">
+      </div>
+      <input type="tel" id="f-phone" placeholder="Ihre Telefonnummer (Rückruf)" autocomplete="tel">
+      <button type="button" onclick="submitForm()" class="btn-form">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Jetzt Beratungsgespräch anfragen
+      </button>
+      <p class="form-note">Oder direkt: <a href="tel:+4915737253851">+49 157 3725 3851</a> &middot; <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;">&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;</a></p>
+      <div id="form-success" style="display:none" class="form-success">&#10003;&nbsp; Vielen Dank! Oliver Jordan meldet sich persönlich bei Ihnen.</div>
+    </div>
   </div>
 </section>
 
-<footer class="contact-footer">
-  <div>
-    <p class="con-name">Oliver Jordan</p>
-    <p class="con-role">Deutschland-Vertrieb · SkyHomes Tiny Houses - remax Bau- &amp; Handels GmbH</p>
-    <div class="con-details">
-      <a href="tel:+4915737253851" class="con-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        +49 157 3725 3851
-      </a>
-      <span class="con-link" style="cursor:default">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        &#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;</span>
-      <a h
+<script>
+function submitForm() {
+  var name = document.getElementById("f-name").value.trim();
+  var camp = document.getElementById("f-camp").value.trim();
+  var phone = document.getElementById("f-phone").value.trim();
+  if (!name || !phone) { alert("Bitte Name und Telefonnummer angeben."); return; }
+  var subject = encodeURIComponent("Beratungsanfrage: " + (camp || "Campingplatz"));
+  var body = encodeURIComponent("Name: " + name + "\nCampingplatz: " + camp + "\nTelefon: " + phone + "\n\nBitte um Rückruf für ein kostenloses Beratungsgespräch.");
+  window.location.href = "&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#111;&#108;&#105;&#118;&#101;&#114;&#46;&#106;&#111;&#114;&#100;&#97;&#110;&#64;&#115;&#116;&#97;&#114;&#107;&#120;&#116;&#101;&#99;&#104;&#46;&#99;&#111;&#109;?subject=" + subject + "&body=" + body;
+  document.getElementById("form-success").style.display = "block";
+}
+</script>
