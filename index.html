@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyHomes Tiny Houses – Premium Glamping</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--forest:#1C3A2A;--forest-mid:#2D5A3F;--sage:#4A7A5A;--sage-light:#7AAF8A;--cream:#F7F4EE;--warm-white:#FDFCF9;--gold:#C9963A;--gold-light:#E8C068;--charcoal:#2A2A2A;--mid-gray:#5A5A5A;--light-gray:#E8E5DF}
+body{font-family:"DM Sans",sans-serif;background:var(--warm-white);color:var(--charcoal);line-height:1.6;font-size:15px}
+.hero{position:relative;background:var(--forest);min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-imgs{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;opacity:.42}
+.hero-imgs div{background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,58,42,.97) 0%,rgba(28,58,42,.5) 55%,rgba(28,58,42,.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:72px 64px;max-width:1100px;width:100%}
+.hero-logo{height:58px;display:block;margin-bottom:28px;filter:brightness(0) invert(1)}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px}
+.hero-h1{font-family:"Playfair Display",serif;font-size:clamp(38px,5.5vw,66px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:22px;max-width:680px}
+.hero-h1 em{font-style:italic;color:var(--gold-light)}
+.hero-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:40px;line-height:1.65}
+.cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:14px;padding:16px 32px;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:var(--gold-light);color:var(--charcoal)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.4);color:rgba(255,255,255,.9);font-family:"DM Sans",sans-serif;font-weight:400;font-size:14px;padding:15px 28px;text-decoration:none;transition:.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.07)}
+.kpi-strip{background:var(--forest-mid);padding:0 64px}
+.kpi-inner{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,.1)}
+.kpi-item{padding:28px 32px;border-right:1px solid rgba(255,255,255,.1)}
+.kpi-value{font-family:"Playfair Display",serif;font-size:34px;font-weight:700;color:var(--gold-light);display:block;line-height:1;margin-bottom:6px}
+.kpi-label{font-size:10.5px;font-weight:400;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:1px}
+.section{padding:80px 64px}
+.section-cream{background:var(--cream)}
+.section-white{background:var(--warm-white)}
+.section-forest{background:var(--forest)}
+.sec-label{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+.sec-label-light{color:var(--gold-light)}
+.sec-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3.2vw,40px);font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:44px;max-width:560px}
+.sec-title-light{color:#fff}
+.gold-bar{width:56px;height:3px;background:var(--gold);margin-bottom:32px}
+.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.opp-card{padding:36px;background:var(--warm-white)}
+.opp-card.problem{border-left:3px solid #C0392B}
+.opp-card.solution{border-left:3px solid var(--sage)}
+.opp-tag{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.opp-tag.pt{color:#C0392B}.opp-tag.st{color:var(--sage)}
+.opp-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.opp-list li{font-size:14px;color:var(--charcoal);line-height:1.55;padding-left:22px;position:relative}
+.opp-list li::before{content:"";position:absolute;left:0;top:5px;width:10px;height:10px;border-radius:50%}
+.opp-card.problem .opp-list li::before{background:#FDECEA;border:1.5px solid #E57373}
+.opp-card.solution .opp-list li::before{background:#E8F5E9;border:1.5px solid var(--sage-light)}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.prod-img{overflow:hidden}
+.prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.prod-img:hover img{transform:scale(1.03)}
+.prod-img.wide{grid-column:span 2;aspect-ratio:16/7}
+.prod-img.tall{aspect-ratio:4/3}
+.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--light-gray);margin-top:48px}
+.ben-item{background:var(--warm-white);padding:40px 32px}
+.ben-icon{width:44px;height:44px;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.ben-icon svg{width:22px;height:22px;fill:var(--gold-light)}
+.ben-title{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--charcoal);margin-bottom:10px}
+.ben-text{font-size:13.5px;color:var(--mid-gray);line-height:1.65}
+.roi-table{width:100%;border-collapse:collapse;max-width:820px;margin-top:36px}
+.roi-table th{background:var(--forest);color:rgba(255,255,255,.7);font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:14px 18px;text-align:left}
+.roi-table td{padding:13px 18px;font-size:14px;border-bottom:1px solid var(--light-gray);color:var(--charcoal)}
+.roi-table tr:nth-child(even) td{background:var(--cream)}
+.roi-table tr.hl td{background:var(--forest);color:var(--gold-light);font-weight:600;font-size:15px}
+.roi-note{margin-top:24px;padding:20px 24px;border-left:3px solid var(--gold);background:var(--cream);max-width:820px;font-size:13.5px;color:var(--mid-gray);line-height:1.6}
+.roi-note strong{color:var(--charcoal)}
+.proc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
+.proc-row::before{content:"";position:absolute;top:27px;left:64px;right:64px;height:1px;background:var(--light-gray);z-index:0}
+.proc-step{padding:0 20px;text-align:center;position:relative;z-index:1}
+.proc-num{width:54px;height:54px;border-radius:50%;background:var(--forest);color:var(--gold-light);font-family:"Playfair Display",serif;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.proc-title{font-weight:600;font-size:14px;color:var(--charcoal);margin-bottom:8px}
+.proc-text{font-size:13px;color:var(--mid-gray);line-height:1.6}
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.testi{padding:36px 36px 32px;border:1px solid rgba(255,255,255,.12);position:relative}
+.testi::before{content:"C";font-family:"Playfair Display",serif;font-size:72px;color:var(--gold);opacity:.5;position:absolute;top:12px;left:24px;line-height:1}
+.testi-text{font-size:15px;font-weight:300;color:rgba(255,255,255,.85);line-height:1.7;margin-top:24px;font-style:italic}
+.testi-source{margin-top:16px;font-size:12px;font-weight:500;color:var(--gold-light);letter-spacing:.5px;text-transform:uppercase}
+.cta-section{background:var(--cream);padding:88px 64px;text-align:center}
+.cta-box{max-width:680px;margin:0 auto}
+.cta-logo{height:52px;display:block;margin:0 auto 32px}
+.cta-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3.2vw,42px);font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:18px}
+.cta-title em{color:var(--gold);font-style:italic}
+.cta-sub{font-size:16px;color:var(--mid-gray);line-height:1.65;margin-bottom:36px}
+.cta-includes{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.cta-inc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mid-gray)}
+.cta-inc::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sage);display:block}
+.btn-cta{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;font-family:"DM Sans",sans-serif;font-weight:600;font-size:15px;padding:18px 44px;text-decoration:none;transition:.2s}
+.btn-cta:hover{background:var(--forest-mid)}
+.contact-footer{background:#2A2A2A;padding:52px 64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}
+.con-name{font-family:"Playfair Display",serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px}
+.con-role{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.con-details{display:flex;gap:24px;flex-wrap:wrap}
+.con-link{font-size:14px;color:rgba(255,255,255,.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s}
+.con-link:hover{color:var(--gold-light)}
+.footer-logo{height:44px;display:block;margin-bottom:8px;margin-left:auto;filter:brightness(0) invert(1)}
+.brand-sub{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;text-align:right}
+@media(max-width:900px){
+.hero-content,.section,.kpi-strip{padding-left:32px;padding-right:32px}
+.kpi-inner{grid-template-columns:repeat(2,1fr)}
+.opp-grid,.prod-grid,.ben-grid,.testi-grid{grid-template-columns:1fr}
+.prod-img.wide{grid-column:span 1;aspect-ratio:16/9}
+.proc-row{grid-template-columns:1fr 1fr;gap:32px}
+.proc-row::before{display:none}
+.contact-footer{grid-template-columns:1fr}
+.footer-logo,.brand-sub{margin-left:0;text-align:left}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-imgs">
+    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img1.png')"></div>
+    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img2.jpg')"></div>
+    <div style="background-image:url('https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img3.jpeg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/logo.png" alt="SkyHomes" class="hero-logo">
+    <p class="eyebrow">Glamping-Infrastruktur 2026</p>
+    <h1 class="hero-h1">Ihr Stellplatz.<br><em>Ihr neues Umsatzpotenzial.</em></h1>
+    <p class="hero-sub">Schlüsselfertige Premium-Unterkünfte, die Ihren Campingplatz in eine Glamping-Destination verwandeln – ohne Großbaustelle, ohne jahrelange Amortisation.</p>
+    <div class="cta-group">
+      <a href="tel:+4915737253851" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Jetzt Beratungsgespräch anfragen
+      </a>
+      <a href="mailto:oliver.jordan@starkxtech.com" class="btn-ghost">oliver.jordan@starkxtech.com</a>
+    </div>
+  </div>
+</header>
+
+<div class="kpi-strip">
+  <div class="kpi-inner">
+    <div class="kpi-item"><span class="kpi-value">3–4×</span><span class="kpi-label">Mehr Umsatz/m² vs. Stellplatz</span></div>
+    <div class="kpi-item"><span class="kpi-value">2,5 J.</span><span class="kpi-label">ROI ab</span></div>
+    <div class="kpi-item"><span class="kpi-value">130 €</span><span class="kpi-label">Nachtrate bis</span></div>
+    <div class="kpi-item"><span class="kpi-value">12 Mo.</span><span class="kpi-label">Ganzjahresbetrieb möglich</span></div>
+  </div>
+</div>
+
+<section class="section section-white">
+  <p class="sec-label">Ausgangslage &amp; Lösung</p>
+  <h2 class="sec-title">Der Markt verändert sich. Ihre Anlage auch?</h2>
+  <div class="opp-grid">
+    <div class="opp-card problem">
+      <p class="opp-tag pt">Das Problem</p>
+      <ul class="opp-list">
+        <li>Stellplätze belegt – Ertrag pro Fläche bleibt begrenzt</li>
+        <li>Gäste fordern zunehmend komfortable, feste Unterkünfte</li>
+        <li>Klassische Neubauten: teuer, langwierig, genehmigungsintensiv</li>
+        <li>Wettbewerber positionieren sich bereits als Glamping-Destination</li>
+      </ul>
+    </div>
+    <div class="opp-card solution">
+      <p class="opp-tag st">Die Lösung</p>
+      <ul class="opp-list">
+        <li>Schlüsselfertig geliefert, aufgestellt, sofort buchbar</li>
+        <li>Glamping-Gäste zahlen 80–130 €/Nacht – das 3–4-Fache</li>
+        <li>Neue Zielgruppen: Paare, Remote-Worker, Familien</li>
+        <li>Winterfeste Konstruktion: 12-Monats-Betrieb gesichert</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="prod-grid">
+  <div class="prod-img wide"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img1.png" alt="SkyHomes Campinganlage"></div>
+  <div class="prod-img tall"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img2.jpg" alt="SkyHomes Einzelhaus"></div>
+  <div class="prod-img tall"><img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/img3.jpeg" alt="SkyHomes Installation"></div>
+</div>
+
+<section class="section section-cream">
+  <p class="sec-label">Mehrwert im Dreiklang</p>
+  <h2 class="sec-title">Wirtschaftlich. Operativ. Strategisch.</h2>
+  <div class="ben-grid">
+    <div class="ben-item">
+      <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <h3 class="ben-title">Wirtschaftlich</h3>
+      <p class="ben-text">ROI bereits ab 2,5 Jahren. Planbare Fixpreise ohne Baukostenrisiko. Teilweise kombinierbar mit Tourismusförderung. 3–4× höherer Umsatz/m² als klassische Stellplätze.</p>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <h3 class="ben-title">Operativ</h3>
+      <p class="ben-text">Lieferung &amp; Aufstellung in Wochen. Vollmöbliert: Küche, Bad, Heizung inklusive. Flexibel skalierbar ab 2–3 Einheiten. Nahtlose Anbindung an bestehende Infrastruktur.</p>
+    </div>
+    <div class="ben-item">
+      <div class="ben-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h3 class="ben-title">Strategisch</h3>
+      <p class="ben-text">Positionierung als Premium-Destination. Zugang zu Glamping-Portalen &amp; neuen Buchungskanälen. Nachhaltigkeitsbonus durch Holzbauweise. Ganzjahres-Attraktivität gesichert.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <p class="sec-label">Wirtschaftlichkeit</p>
+  <h2 class="sec-title">Die Zahlen sprechen für sich.</h2>
+  <table class="roi-table">
+    <thead><tr><th>Position</th><th>Wert</th><th>Anmerkung</th></tr></thead>
+    <tbody>
+      <tr><td>Investition pro Einheit</td><td><strong>45.000–60.000 €</strong></td><td>Inkl. Lieferung, Aufstellung, Ausstattung</td></tr>
+      <tr><td>Nachtrate</td><td><strong>90–130 €</strong></td><td>Je nach Ausstattung und Lage</td></tr>
+      <tr><td>Auslastung Jahr 1</td><td><strong>120–150 Nächte</strong></td><td>Haupt- + Nebensaison</td></tr>
+      <tr><td>Auslastung ab Jahr 2</td><td><strong>150–200 Nächte</strong></td><td>Nach Etablierung &amp; Bewertungen</td></tr>
+      <tr><td>Jahresumsatz (konservativ)</td><td><strong>10.800–19.500 €</strong></td><td>120–150 Nächte × 90 €</td></tr>
+      <tr><td>Jahresumsatz ab Jahr 2</td><td><strong>16.500–26.000 €</strong></td><td>150–200 Nächte × 110 €</td></tr>
+      <tr class="hl"><td>Amortisation</td><td>2,5–4 Jahre</td><td>Bei Betriebskosten 25–30 %</td></tr>
+    </tbody>
+  </table>
+  <p class="roi-note"><strong>Zusatzerlöse nicht eingerechnet:</strong> Verlängerte Aufenthalte &middot; Frühstück, Wellness &amp; Services &middot; Cross-Selling &middot; Erhöhte Gesamtattraktivität der Anlage.</p>
+</section>
+
+<section class="section section-cream">
+  <p class="sec-label">Umsetzung</p>
+  <h2 class="sec-title">Von der Analyse zur ersten Buchung.</h2>
+  <div class="proc-row">
+    <div class="proc-step"><div class="proc-num">1</div><p class="proc-title">Standortanalyse &amp; Planung</p><p class="proc-text">Geländebegehung, Prüfung baurechtlicher Rahmenbedingungen, Positionierungsempfehlung.</p></div>
+    <div class="proc-step"><div class="proc-num">2</div><p class="proc-title">Genehmigungsunterstützung</p><p class="proc-text">Bauvoranfrage, technische Unterlagen, Erfahrung mit Tiny-House-Genehmigungen.</p></div>
+    <div class="proc-step"><div class="proc-num">3</div><p class="proc-title">Lieferung &amp; Installation</p><p class="proc-text">Deutschlandweite Anlieferung, schlüsselfertige Übergabe mit Einweisung.</p></div>
+    <div class="proc-step"><div class="proc-num">4</div><p class="proc-title">Vermarktungsstart</p><p class="proc-text">Positionierung, Preisgestaltung, Empfehlungen zu Glamping-Portalen &amp; Fotomaterial.</p></div>
+  </div>
+</section>
+
+<section class="section section-forest">
+  <p class="sec-label sec-label-light">Kundenstimmen</p>
+  <h2 class="sec-title sec-title-light">Was Betreiber berichten.</h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <p class="testi-text">Unsere drei Tiny Houses waren bereits im ersten Jahr zu 85&nbsp;% ausgelastet – vor allem in der Nebensaison sind sie der entscheidende Umsatzbringer.</p>
+      <p class="testi-source">Campingplatz Schwarzwald &middot; 4-Sterne-Anlage</p>
+    </div>
+    <div class="testi">
+      <p class="testi-text">Die Genehmigung ging deutlich schneller als befürchtet, und die Gäste lieben die Kombination aus Natur und Komfort. Wir planen bereits die zweite Ausbaustufe.</p>
+      <p class="testi-source">Ferienpark Ostsee &middot; Premium-Segment</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/logo.png" alt="SkyHomes" class="cta-logo">
+    <div class="gold-bar" style="margin:0 auto 28px"></div>
+    <h2 class="cta-title">Ihr Standort hat <em>Potenzial</em>.<br>Wir machen es sichtbar.</h2>
+    <p class="cta-sub">Kostenlose &amp; unverbindliche Wirtschaftlichkeitsanalyse für Ihren Campingplatz.</p>
+    <div class="cta-includes">
+      <span class="cta-inc">Individuelle Wirtschaftlichkeitsrechnung</span>
+      <span class="cta-inc">Positionierungs-Empfehlung</span>
+      <span class="cta-inc">Genehmigungsübersicht Ihrer Region</span>
+      <span class="cta-inc">Finanzierungs- &amp; Fördermöglichkeiten</span>
+    </div>
+    <a href="tel:+4915737253851" class="btn-cta">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      +49 157 3725 3851 &middot; Beratungsgespräch vereinbaren
+    </a>
+  </div>
+</section>
+
+<footer class="contact-footer">
+  <div>
+    <p class="con-name">Oliver Jordan</p>
+    <p class="con-role">Deutschland-Vertrieb &middot; SkyHomes Tiny Houses &middot; remax Bau- &amp; Handels GmbH</p>
+    <div class="con-details">
+      <a href="tel:+4915737253851" class="con-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +49 157 3725 3851
+      </a>
+      <a href="mailto:oliver.jordan@starkxtech.com" class="con-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        oliver.jordan@starkxtech.com
+      </a>
+      <a href="http://skyhomes-remax.com" class="con-link" target="_blank" rel="noopener">skyhomes-remax.com</a>
+      <a href="https://instagram.com/skyhomes_tinyhouses" class="con-link" target="_blank" rel="noopener">@skyhomes_tinyhouses</a>
+    </div>
+  </div>
+  <div>
+    <img src="https://raw.githubusercontent.com/SkyHomes/SkyHomes.github.io/main/logo.png" alt="SkyHomes" class="footer-logo">
+    <p class="brand-sub">Tiny Houses &middot; Premium Glamping</p>
+  </div>
+</footer>
+
+</body>
+</html>
